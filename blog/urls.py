@@ -6,7 +6,7 @@ urlpatterns = [
     re_path(r'^(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/(?P<slug>[-\w]+)/$',
             views.PostDetailView.as_view(),
             name='post_detail'),
-    path('createNews/', views.PostCreateView.as_view(), name='createPost'),
+    path('createNews/', views.PostCreateView.as_view(), name='post_create'),
     path('signup/', views.SignUpView.as_view(), name='signup'),
-    path(r'^(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/(?P<slug>[-\w]+)/$update/', views.PostUpdateView.as_view(), name='post_update'),
+    path('<int:year>/<int:month>/<int:day>/<slug:slug>/update/', views.PostUpdateView.as_view(), name='post_update'),
 ]

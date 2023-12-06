@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<p><a href="{% url 'blog:post_list'%}">back</a></p>
 <form class="django-form" method="post" action="">
     {% csrf_token %}
     {{ form.as_p }}
     <input class="ClassSubRecord" type="submit" value="Submit" />
 </form>
+
 {% if form.errors %}
 <div class="alert alert-danger" role="alert">
   {% for field in form %}
