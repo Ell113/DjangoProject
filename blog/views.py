@@ -40,3 +40,8 @@ class PostUpdateView(UpdateView):
     model = Post
     fields = ['title', 'body', 'status']
 
+
+
+class PostProfile(generic.ListView):
+    model = Post
+    template_name = 'profile.html'
