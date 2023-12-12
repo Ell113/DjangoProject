@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.PostListView.as_view(), name='post_list'),
+    path('profile/<user>', views.PostProfile.as_view(), name='profile'),
     re_path(r'^(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/(?P<slug>[-\w]+)/$',
             views.PostDetailView.as_view(),
             name='post_detail'),
