@@ -5,7 +5,9 @@
 <p class="date">
     Published {{ post.publish }} by {{ post.author }}
 </p>
+{%if post.author == user %}
 <p><a href="{% url 'blog:post_update' post.publish.year post.publish.month post.publish.day post.slug%}">update</a></p>
+{% endif %}
 {{ post.body|linebreaks }}
 <p><a href="{% url 'blog:post_list' %}">back</a></p>
 {% endblock %}

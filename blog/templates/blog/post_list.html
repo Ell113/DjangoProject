@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}My Blog{% endblock %}
 {% block content %}
-<h1>My Blog</h1>
+<h1>My Blog | Count of your news: Published {{ countP }}, Draft {{ countD }} </h1>
 <div class="posts">
     {% for post in post_list %}
     {% if post.status != 'draft' %}

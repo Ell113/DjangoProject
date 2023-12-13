@@ -14,9 +14,10 @@
 <div id="sidebar">
     {% if user.is_authenticated %}
     <h2>{{ user.get_username }}</h2>
-    <p><a href="{% url 'blog:createPost' %}">Create news</a></p>
+    <p><a href="{% url 'blog:post_create' %}">Create news</a></p>
     <p><a href="{% url 'blog:profile' user %}">my profile</a></p>
-    <p><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></p>
+    <p><a href="{% url 'blog:post_list'%}">Portal</a></p>
+    <p><a href="{% url 'logout'%}" method="post">Logout</a></p>
     {% else %}
     <p><a href="{% url 'login' %}?next={{request.path}}">Login</a></p>
     <p><a href="{% url 'blog:signup' %}?next={{request.path}}">Registration</a></p>
